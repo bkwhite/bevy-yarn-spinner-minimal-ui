@@ -41,7 +41,7 @@ fn setup(asset_server: Res<AssetServer>, mut commands: Commands) {
         .with_children(|parent| {
             parent.spawn((
                 TextBundle::from_section(
-                    "Waiting for dialog...",
+                    "Waiting for dialogue...",
                     TextStyle {
                         font: asset_server.load("fonts/FiraSans-Bold.ttf"),
                         font_size: 32.0,
@@ -128,7 +128,7 @@ fn complete_dialogue(
     mut text: Query<&mut Text, Without<DialogLine>>,
 ) {
     for mut text in line.iter_mut() {
-        text.sections[0].value = "Waiting for dialog...".to_string();
+        text.sections[0].value = "Waiting for dialogue...".to_string();
     }
 
     for children in button.iter() {
